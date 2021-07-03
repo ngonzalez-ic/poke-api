@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
+import { sertchPokemon } from '../../utils/Utils'
 
 const SerchBar = () => {
     const [serch, setSerch]=useState('')
-    const handleClick = () =>{
+    const [pokemon, setPokemon]= useState()
 
+    const handleClick = async () =>{
+          const data = await sertchPokemon(serch)
+          setPokemon(data)
+          console.log( pokemon.name);
+          
     }
     const handleOnChange = (e)=>{
             setSerch(e.target.value)
-            console.log(serch)
     }
     return(
        <div>
@@ -21,6 +26,10 @@ const SerchBar = () => {
         >
             Serch
         </button>
+        <div>
+
+            aca va pokemon
+        </div>
        </div>
     )
 }
