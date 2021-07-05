@@ -7,7 +7,9 @@ export default function Navabar() {
 
     return (
       <nav>
-       <img src={LogoAPI} />
+       <img 
+       className='navbar-image'
+       src={LogoAPI} />
        <div>&#10084;&#65039; {favoritePokemons.length}</div>
       </nav>
     );

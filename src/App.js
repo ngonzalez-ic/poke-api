@@ -7,9 +7,9 @@ import {getPokemons, pokemonData} from './utils/Utils';
 
 function App() {
   const [pokemons, setPokemons] = useState([])
-  const [page, setPage] = useState( )
+  const [page, setPage] = useState(0)
   const fetchPokemons = async ()=>{
-    let max=6
+    let max=5
     let ini=0
     try {
       const data = await getPokemons(max,ini *page)
