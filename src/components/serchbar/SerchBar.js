@@ -8,28 +8,27 @@ const SerchBar = () => {
     const handleClick = async () =>{
           const data = await sertchPokemon(serch)
           setPokemon(data)
-          console.log( pokemon.name);
+          console.log( pokemon);
           
     }
     const handleOnChange = (e)=>{
             setSerch(e.target.value)
     }
     return(
-       <div>
-        <input type='text' 
-            placeholder='Serch Poke'
-            onChange={handleOnChange}
+        <div className='serchbar-container'>
+            <div className='serchbar'>
+                <input type='text' 
+                    placeholder='Serch Poke'
+                    onChange={handleOnChange}
 
-        />
-        <button
-            onClick={handleClick}
-        >
-            Serch
-        </button>
-        <div>
-
-            aca va pokemon
-        </div>
+                />
+             </div>
+            <div className='serchbar-btn'>
+                <button 
+                    onClick={handleClick}>
+                    Serch
+                </button>
+            </div>
        </div>
     )
 }
