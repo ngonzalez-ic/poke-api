@@ -1,11 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import LogoAPI from '../../images/logo.png'
+import FavoriteContext from '../../contexts/favoriteContext';
 
 export default function Navabar() {
+  const { favoritePokemons } = useContext(FavoriteContext);
+
     return (
       <nav>
        <img src={LogoAPI} />
-       <div>&#128147;</div>
+       <div>&#10084;&#65039; {favoritePokemons.length}</div>
       </nav>
     );
   }
