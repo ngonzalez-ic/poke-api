@@ -5,6 +5,7 @@ import Pagination from '../pagination/Pagination';
 
 const Container = (props) =>{
     const {pokemons, page, setPage, total} = props
+    console.log(page,setPage, total);
     
   const lastPage = () => {
     const nextPage = Math.max(page - 1, 0);
@@ -43,9 +44,10 @@ const Container = (props) =>{
 
 Container.propTypes = {
     pokemons: PropTypes.arrayOf,
-    page:PropTypes.elementType,
-    setPage:PropTypes.elementType,
-    total:PropTypes.elementType   
+    page:PropTypes.number,
+    setTotal:PropTypes.number,
+    setPage:PropTypes.number,
+    total:PropTypes.number
 }
 
 export default Container
