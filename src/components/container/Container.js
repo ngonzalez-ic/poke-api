@@ -15,7 +15,7 @@ const Container = (props) =>{
     setPage(nextPage)
   }
   return(
-    <>
+    <div>
       <div className='header'>
         <Pagination 
           page={page + 1}
@@ -33,7 +33,7 @@ const Container = (props) =>{
           })
         }
       </div>
-    </>
+    </div>
   )
 }
 

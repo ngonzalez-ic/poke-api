@@ -18,7 +18,6 @@ const SerchBar = () => {
     <div className='serchbar-container'>
       <div className='serchbar'>
         <input type='text' 
-          placeholder='Serch Poke'
           onChange={handleOnChange}
 
         />

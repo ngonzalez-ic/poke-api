@@ -38,16 +38,18 @@ function App() {
     
     <div className='App'>
       <Navabar />
-      <SerchBar />
-      {loading ? <Loading /> :
-        <Container 
-          pokemons={pokemons}
-          page={page}
-          total={total}
-          setTotal={setTotal}
-          setPage={setPage} />
-      }
-      <Footer />
+      <div>
+        <SerchBar />
+        {loading ? <Loading /> :
+          <Container 
+            pokemons={pokemons}
+            page={page}
+            total={total}
+            setTotal={setTotal}
+            setPage={setPage} />
+        }
+        <Footer />
+      </div>
     </div>
     
   );
