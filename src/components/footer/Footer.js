@@ -1,9 +1,13 @@
 import React from 'react';
+import FooterBall from '../../images/pokeboll.png';
 
 const Footer= () =>{
   return(
-    <div className='foote'>
-      <h1> FOOTER</h1>
+    <div className='footer'>
+      <div className='footer-img'>
+        <img src={FooterBall}/>
+      </div>
+      
     </div>
   )
 }

@@ -3,7 +3,11 @@ import Pokeboll from '../../images/loading.gif';
 
 const Loading=()=>{
   return(
-    <img src={Pokeboll}/>
+    <div 
+    className='loading' >
+        <img src={Pokeboll}/>
+    </div>
+    
   )
 }
 

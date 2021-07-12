@@ -11,7 +11,8 @@ function App() {
   const [pokemons, setPokemons] = useState([])
   const [ loading, setLoading ] =useState(true)
   const [page, setPage] = useState(0)
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0)
+
 
   const fetchPokemons = async ()=>{
     let max=5
@@ -22,7 +23,8 @@ function App() {
           await pokemonData(pokemon.url)
         )
       })
-      const results = await Promise.all(promises)
+
+     const results = await Promise.all(promises)
       setPokemons(results)
       setLoading(false)
       setTotal( Math.ceil(data.count / max))
@@ -30,28 +32,33 @@ function App() {
       console.log(e);
     }
   }
+
+
   useEffect(()=>{
     fetchPokemons()
   },[page])
 
+
   return (
     
-    <div className='App'>
-      <Navabar />
-      <div>
-        <SerchBar />
-        {loading ? <Loading /> :
-          <Container 
-            pokemons={pokemons}
-            page={page}
-            total={total}
-            setTotal={setTotal}
-            setPage={setPage} />
-        }
-        <Footer />
-      </div>
-    </div>
-    
+      <div className='App'>
+        
+        <Navabar />
+
+        <div>
+          <SerchBar />
+          {loading ? <Loading /> :
+            <Container 
+              pokemons={pokemons}
+              page={page}
+              total={total}
+              setTotal={setTotal}
+              setPage={setPage} />
+          }
+          <Footer />
+
+        </div>
+       </div>
   );
 }
 
