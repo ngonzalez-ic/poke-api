@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
-import { sertchPokemon } from '../../utils/Utils'
+import PropTypes from 'prop-types';
 
-const SerchBar = () => {
-  const [serch, setSerch]=useState('')
+const SerchBar = (props) => {
+  const { onSearch } = props
   const [pokemon, setPokemon]= useState()
 
   const handleClick = async () =>{
-    const data = await sertchPokemon(serch)
-    setPokemon(data)
-    console.log( pokemon);
+    onSearch(pokemon)
           
   }
   const handleOnChange = (e)=>{
-    setSerch(e.target.value)
+    setPokemon(e.target.value)
+    if (e.target.value.length === 0) {
+      onSearch(null);
+    }
   }
   return(
     <div className='serchbar-container'>
@@ -30,6 +31,9 @@ const SerchBar = () => {
       </div>
     </div>
   )
+}
+SerchBar.propTypes = {
+  onSearch: PropTypes.func
 }
 
 export default SerchBar

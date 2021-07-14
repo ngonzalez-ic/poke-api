@@ -5,13 +5,15 @@ import SerchBar from './components/serchbar/SerchBar';
 import Container from './components/container/Container';
 import Loading from './components/loading/Loading';
 import Footer from './components/footer/Footer';
-import {getPokemons, pokemonData} from './utils/Utils';
+import {getPokemons, pokemonData, searchPokemon} from './utils/Utils';
 
 function App() {
   const [pokemons, setPokemons] = useState([])
-  const [ loading, setLoading ] =useState(true)
+  const [loading, setLoading ] =useState(true)
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
+  const [notFound, setNotFound] = useState(false);
+  const [searching, setSearching] = useState(false)
 
 
   const fetchPokemons = async ()=>{
@@ -28,26 +30,46 @@ function App() {
       setPokemons(results)
       setLoading(false)
       setTotal( Math.ceil(data.count / max))
+      setNotFound(false)
     } catch (e) {
       console.log(e);
     }
   }
 
+  const onSearch = async (pokemon) => {
+    if (!pokemon) {
+      return fetchPokemons();
+    }
+
+    setLoading(true);
+    setNotFound(false);
+    setSearching(true);
+    const result = await searchPokemon(pokemon);
+    if (!result) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    } else {
+      setPokemons([result]);
+      setPage(0);
+      setTotal(1);
+    }
+    setLoading(false);
+    setSearching(false);
+  };
 
   useEffect(()=>{
+    if(!searching){
     fetchPokemons()
+    } 
   },[page])
 
-
-  return (
-    
-      <div className='App'>
-        
+  return (    
+      <>        
         <Navabar />
-
-        <div>
-          <SerchBar />
-          {loading ? <Loading /> :
+        <div className='App'>
+          <SerchBar onSearch={onSearch}/>
+          {loading && !notFound? <Loading /> :
             <Container 
               pokemons={pokemons}
               page={page}
@@ -58,8 +80,9 @@ function App() {
           <Footer />
 
         </div>
-       </div>
+       </>
   );
 }
+
 
 export default App;
