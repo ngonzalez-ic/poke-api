@@ -24,7 +24,8 @@ const Container = (props) =>{
           onRightClick={nextPage}
         />
       </div>
-      <div className='pokedex-grid'>
+      <div className='container'>
+        <div className='pokedex-grid'>
         {!pokemons ? 'no hay pokemons': 
           pokemons.map((pokemon,id)=>{
             return(
@@ -33,6 +34,8 @@ const Container = (props) =>{
           })
         }
       </div>
+        </div>
+
     </div>
   )
 }

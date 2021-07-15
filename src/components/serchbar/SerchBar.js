@@ -20,6 +20,8 @@ const SerchBar = (props) => {
       <div className='serchbar'>
         <input type='text' 
           onChange={handleOnChange}
+          maxLength='15'
+          minLength='4'
 
         />
       </div>
