@@ -85,7 +85,6 @@ nav {
 }
 .container{
   margin: 10px;
-  background-color: #F7F7F9;
   padding: 15px;
   
   
@@ -166,4 +165,14 @@ nav {
     font-size: 1.6rem;
     margin-top: 0;
     margin-bottom: 2rem;
+  }
+
+  .card-footer-social {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-footer-social p {
+    letter-spacing: 1px;
   }
