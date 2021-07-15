@@ -1,9 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import BgImg from '../../images/bg-pattern-card.svg'
+import Ball from '../../images/buttom/pokeball.png'
 import PropTypes from 'prop-types';
 
 const Card =(props)=>{
   const { pokemon }=props
+  const [ footer, setfooter] = useState(true)
+  const handleOnClick = ()=>{
+    if(footer===true){
+      setfooter(false)
+    }
+    else{
+      setfooter(true)
+    }
+  }
 
   return(
      <div className="card">
@@ -23,6 +33,12 @@ const Card =(props)=>{
       </h1>
       <p className="card-body-text"># {pokemon.id}</p>
     </div>
+    <button 
+    className='ball-button'
+    onClick={handleOnClick}>
+    <img src={Ball}/>    
+    </button>
+    {footer ? <> </> :
     <div className="card-footer">
       <div className="card-footer-social">
        {pokemon.types.map((type,id)=>{
@@ -33,7 +49,7 @@ const Card =(props)=>{
         
             )
           })}
-        <p>Ataque</p>
+        <p>Type</p>
       </div>
       <div className="card-footer-social">
         <h3>803K</h3>
@@ -44,6 +60,7 @@ const Card =(props)=>{
         <p>Defensa</p>
       </div>
     </div>
+}
   </div>
  
     ) 

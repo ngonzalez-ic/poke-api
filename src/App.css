@@ -176,3 +176,8 @@ nav {
   .card-footer-social p {
     letter-spacing: 1px;
   }
+  .ball-button{
+    border: none;
+    border-radius: 19px;
+    margin-left: 45%;
+  }

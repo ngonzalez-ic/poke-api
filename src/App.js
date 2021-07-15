@@ -12,9 +12,8 @@ function App() {
   const [loading, setLoading ] =useState(true)
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
-  const [notFound, setNotFound] = useState(false);
+  const [notFound, setNotFound] = useState(false)
   const [searching, setSearching] = useState(false)
-
 
   const fetchPokemons = async ()=>{
     let max=5
