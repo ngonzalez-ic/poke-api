@@ -16,7 +16,6 @@ const Card =(props)=>{
       setfooter(true)
     }
   }
-
   return(
      <div className="card">
     <img
@@ -54,11 +53,11 @@ const Card =(props)=>{
         <p>{t('Type')}</p>
       </div>
       <div className="card-footer-social">
-        <h3>803K</h3>
+        <h3>{pokemon.stats[1].base_stat}</h3>
         <p>{t('EspecialAtack')}</p>
       </div>
       <div className="card-footer-social">
-        <h3>1.4K</h3>
+        <h3>{pokemon.stats[2].base_stat}</h3>
         <p>{t('Def')}</p>
       </div>
     </div>
