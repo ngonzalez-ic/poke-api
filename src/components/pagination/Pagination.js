@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { LeftArrow, RightArrow } from '../../images/buttom/Arrow';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { LeftArrow, RightArrow } from '../../images/buttom/Arrow'
 
 const Pagination =(props)=>{
   const { onLeftClick, onRightClick, page, totalPages } = props

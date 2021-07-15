@@ -1,11 +1,11 @@
-import React,{useEffect, useState} from 'react';
-import './App.css';
+import React,{useEffect, useState} from 'react'
+import './App.css'
 import Navabar from './components/navbar/Navbar'
-import SerchBar from './components/serchbar/SerchBar';
-import Container from './components/container/Container';
-import Loading from './components/loading/Loading';
-import Footer from './components/footer/Footer';
-import {getPokemons, pokemonData, searchPokemon} from './utils/Utils';
+import SerchBar from './components/serchbar/SerchBar'
+import Container from './components/container/Container'
+import Loading from './components/loading/Loading'
+import Footer from './components/footer/Footer'
+import {getPokemons, pokemonData, searchPokemon} from './utils/Utils'
 
 function App() {
   const [pokemons, setPokemons] = useState([])
@@ -31,31 +31,31 @@ function App() {
       setTotal( Math.ceil(data.count / max))
       setNotFound(false)
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
   }
 
   const onSearch = async (pokemon) => {
     if (!pokemon) {
-      return fetchPokemons();
+      return fetchPokemons()
     }
 
-    setLoading(true);
-    setNotFound(false);
-    setSearching(true);
-    const result = await searchPokemon(pokemon);
+    setLoading(true)
+    setNotFound(false)
+    setSearching(true)
+    const result = await searchPokemon(pokemon)
     if (!result) {
-      setNotFound(true);
-      setLoading(false);
-      return;
+      setNotFound(true)
+      setLoading(false)
+      return
     } else {
-      setPokemons([result]);
-      setPage(0);
-      setTotal(1);
+      setPokemons([result])
+      setPage(0)
+      setTotal(1)
     }
-    setLoading(false);
-    setSearching(false);
-  };
+    setLoading(false)
+    setSearching(false)
+  }
 
   useEffect(()=>{
     if(!searching){
@@ -80,8 +80,8 @@ function App() {
 
       </div>
     </>
-  );
+  )
 }
 
 
-export default App;
+export default App

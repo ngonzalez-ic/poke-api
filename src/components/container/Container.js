@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Card from '../card/Card';
-import Pagination from '../pagination/Pagination';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Card from '../card/Card'
+import Pagination from '../pagination/Pagination'
 
 const Container = (props) =>{
   const {pokemons, page, setPage, total} = props
   const lastPage = () => {
-    const nextPage = Math.max(page - 1, 0);
+    const nextPage = Math.max(page - 1, 0)
     setPage(nextPage)
   }
 
   const nextPage = () => {
-    const nextPage = Math.min(page + 1, total );
+    const nextPage = Math.min(page + 1, total )
     setPage(nextPage)
   }
   return(

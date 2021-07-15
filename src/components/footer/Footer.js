@@ -1,5 +1,5 @@
-import React from 'react';
-import FooterBall from '../../images/pokeboll.png';
+import React from 'react'
+import FooterBall from '../../images/pokeboll.png'
 
 const Footer= () =>{
   return(

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const SerchBar = (props) => {
   const { onSearch } = props
@@ -12,7 +12,7 @@ const SerchBar = (props) => {
   const handleOnChange = (e)=>{
     setPokemon(e.target.value)
     if (e.target.value.length === 0) {
-      onSearch(null);
+      onSearch(null)
     }
   }
   return(

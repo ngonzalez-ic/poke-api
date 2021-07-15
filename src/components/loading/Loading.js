@@ -1,5 +1,5 @@
 import React from 'react'
-import Pokeboll from '../../images/loading.gif';
+import Pokeboll from '../../images/loading.gif'
 
 const Loading=()=>{
   return(

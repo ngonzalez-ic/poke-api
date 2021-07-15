@@ -9,5 +9,5 @@ export default function Navabar() {
         className='navbar-image'
         src={LogoAPI} />
     </nav>
-  );
+  )
 }

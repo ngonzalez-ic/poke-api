@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import { render, screen } from '@testing-library/react'
-import App from './App'
+import React from 'react'
+import { render, screen } from '@testing-library/react';
+import Card from './components/card/Card';
 
-test('renders learn react link', () => {
-
-  // eslint-disable-next-line react/react-in-jsx-scope
-  render(<App />)
-  const linkElement = screen.getByText(/learn react/i)
-  expect(linkElement).toBeInTheDocument()
-})
+describe ('Card'),()=>{
+  it('',()=>{
+    render(<Card/>)
+    expect(screen.queryAllByText())
+  })
+}
