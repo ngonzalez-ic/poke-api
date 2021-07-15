@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
 import BgImg from '../../images/bg-pattern-card.svg'
 import Ball from '../../images/buttom/pokeball.png'
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 const Card =(props)=>{
   const { pokemon }=props
+  const {t }= useTranslation()
   const [ footer, setfooter] = useState(true)
   const handleOnClick = ()=>{
     if(footer===true){
@@ -49,15 +51,15 @@ const Card =(props)=>{
         
             )
           })}
-        <p>Type</p>
+        <p>{t('Type')}</p>
       </div>
       <div className="card-footer-social">
         <h3>803K</h3>
-        <p>Ataque Especial</p>
+        <p>{t('EspecialAtack')}</p>
       </div>
       <div className="card-footer-social">
         <h3>1.4K</h3>
-        <p>Defensa</p>
+        <p>{t('Def')}</p>
       </div>
     </div>
 }
