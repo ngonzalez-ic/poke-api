@@ -26,15 +26,15 @@ const Container = (props) =>{
       </div>
       <div className='container'>
         <div className='pokedex-grid'>
-        {!pokemons ? 'no hay pokemons': 
-          pokemons.map((pokemon,id)=>{
-            return(
-              <Card pokemon={pokemon} key={id}/>
-            )
-          })
-        }
-      </div>
+          {!pokemons ? 'no hay pokemons': 
+            pokemons.map((pokemon,id)=>{
+              return(
+                <Card pokemon={pokemon} key={id}/>
+              )
+            })
+          }
         </div>
+      </div>
 
     </div>
   )
