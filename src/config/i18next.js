@@ -1,8 +1,8 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-const userLang = navigator.language || navigator.userLanguage
-const defaultLocale = userLang.substring(0,2)
+const userLang = localStorage.getItem('languaje')
+const defaultLocale = userLang || navigator.language
 i18n
   .use(initReactI18next)
   .init({

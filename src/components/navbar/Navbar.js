@@ -8,6 +8,7 @@ export default function Navabar() {
       <img 
         className='navbar-image'
         src={LogoAPI} />
+        
     </nav>
   )
 }

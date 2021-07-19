@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 const Card =(props)=>{
   const { pokemon }=props
-  const {t }= useTranslation()
+  const {t}= useTranslation()
   const [ footer, setfooter] = useState(true)
   const handleOnClick = ()=>{
     if(footer===true){
